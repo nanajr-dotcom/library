@@ -1,4 +1,41 @@
- export const createBook = (req, res) => {
+import { v4 as uuidv4 } from 'uuid';
+
+let books = [
+    {
+        "title": "Catfish in Black Bean Sauce",
+        "author": "Fancie Bunny",
+        "number_of_pages": 48,
+        "category": "science fiction",
+        "rating": 8,
+        "id": 1
+    },
+    {
+        "title": "Trip, The",
+        "author": "Margette Piwall",
+        "number_of_pages": 8,
+        "category": "non fiction",
+        "rating": 3,
+        "id": 2
+    },
+    {
+        "title": "Vessel of Wrath",
+        "author": "Pansy O'Sherrin",
+        "number_of_pages": 45,
+        "category": "non fiction",
+        "rating": 10,
+        "id": 3
+    },
+    {
+        "title": "Dragonheart",
+        "author": "Terrence Wykey",
+        "number_of_pages": 88,
+        "category": "physics",
+        "rating": 1,
+        "id": 4
+    }
+]
+
+export const createBook = (req, res) => {
     
     const book = req.body
 
@@ -6,7 +43,7 @@
     res.send(`Book with title ${book.title} added to the database`)
 }
 
-export const getBook = (req, res) => {
+export const getBooks = (req, res) => {
     res.send(books)
 }
 
